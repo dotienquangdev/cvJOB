@@ -1,0 +1,24 @@
+.sider
+    .inner-menu 
+        ul 
+            li 
+                a(href=`/`) Home
+            li 
+                a(href=`${prefixAdmin}/dashboard`) Tổng quan
+            if(role.permissions.includes("products-category_view"))
+                li
+                    a(href=`${prefixAdmin}/products-category`) DM Sản phẩm
+            li
+                a(href=`${prefixAdmin}/products`) DS Sản phẩm
+            
+            li
+                a(href=`${prefixAdmin}/deleteProducts`) SP đã xóa
+
+            if(role.permissions.includes("roles_view"))
+                li    
+                    a(href=`${prefixAdmin}/roles`) Nhóm quyền
+            if(role.permissions.includes("roles_permissions"))
+                li    
+                    a(href=`${prefixAdmin}/roles/permissions`) Phân quyền
+            li    
+                a(href=`${prefixAdmin}/accounts`) DS Tài Khoản

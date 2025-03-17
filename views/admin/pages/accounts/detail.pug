@@ -1,0 +1,41 @@
+extends ../../layouts/default.pug
+
+block main 
+    h1(class="mb-4") Chi tiết tài khoản
+    div(class="account-detail")
+        if(account.id)
+            div(class="mb-4") ID: <b>#{account.id}</b>
+        if(account.fullName)
+            div(class="mb-4") Tên: <b>#{account.fullName}</b>
+        if(account.email)
+            div(class="mb-4") Email: <b>#{account.email}</b>
+        if(account.phone)
+            div(class="mb-4") Phone: <b>#{account.phone}</b>
+        if(account.avatar)
+            div(class="mb-4")
+                img(
+                    src=account.avatar 
+                    style="width:100px"
+                )
+        if(account.role_id)
+            div(class="mb-4") Quyền: <b>#{account.role_id}</b>
+        if(account.status)
+            div(class="mb-4") Trạng thái: <b>#{account.status}</b>
+        if(account.deleted)
+            div(class="mb-4") Đã xóa: <b>#{account.deleted}</b>
+        if(account.createdAt)
+            div(class="mb-4") Ngày tạo: <b>#{account.createdAt}</b>
+        if(account.updatedAt)
+            div(class="mb-4") Cập nhật lần cuối: <b>#{account.updatedAt}</b>
+    
+    a(
+        class="btn badge-success"
+        href=`${prefixAdmin}/accounts`
+    ) Quay lại 
+
+    a(
+        class="btn btn-warning"
+        href=`${prefixAdmin}/accounts/edit/${account.id}`
+    ) Chỉnh sửa
+    
+    script(src="/admin/js/account.js")

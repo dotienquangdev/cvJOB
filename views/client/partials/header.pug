@@ -1,0 +1,20 @@
+include ../mixins/sub-menu.pug
+header.header
+    .container
+        .row.align-item-center 
+            .col-3 
+                .inner-logo 
+                    a(href="/")
+                        img(src="/image/logo.svg", alt="Logo")
+            
+            .col-9 
+                .inner-menu 
+                    ul 
+                        li 
+                            a(href="/") Trang chủ
+                        li(class="sub-menu")
+                            -const pathProduct = "/products";
+                            a(href=pathProduct) Sản phẩm
+                                +sub-menu(layoutProductCategory,pathProduct)
+                        li 
+                            a(href="/admin/dashboard") Admin

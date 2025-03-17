@@ -1,0 +1,229 @@
+/* Hader */
+.header {
+    background: #202020;
+    padding: 10px 0;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+.header .inner-logo a {
+    font-size: 24px;
+    font-weight: 700;
+    color: #fff;
+}
+
+/* End header  */
+
+/* body */
+.body .sider {
+    width: 150px;
+    background: #323232;
+    color: #fff;
+    height: calc(100vh - 56px);
+    position: fixed;
+    top: 56px;
+    left: 0;
+}
+
+.body .main {
+    margin: 15px;
+    position: relative;
+    left: 150px;
+    width: calc(100% - 180px);
+}
+
+/* End */
+
+/* Sider */
+.sider .inner-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sider .inner-menu ul li a {
+    color: #fff;
+    display: block;
+    padding: 6px 10px;
+    border-bottom: 1px solid #515151;
+}
+
+/* End */
+.badge {
+    border: 1px solid #000;
+    list-style: none;
+    padding: 10px;
+}
+
+.badge-success {
+    background-color: green;
+}
+
+.badge-danger {
+    background-color: red;
+}
+
+.card.mb-3 .card-body button {
+    margin: 3px;
+}
+
+.page-item {
+    margin: 1px;
+}
+
+.menuSplit {
+    display: flex;
+}
+
+.menuSplit h1 {
+    width: 70%;
+}
+
+.menuSplit li {
+    list-style: none;
+    text-decoration: none;
+}
+
+.menuSplit li a {
+    list-style: none;
+    text-decoration: none;
+}
+
+.deleteAll {
+    margin: 10px;
+    border-radius: 10px;
+    right: 0;
+    width: 25%;
+    height: auto;
+    background: rgb(218, 218, 218);
+    justify-content: center;
+    align-items: center;
+    /* display: flex; */
+}
+
+.deleteAll span i .fa-solid {
+    color: red;
+    background: red;
+}
+
+
+/* //show alert */
+
+[show-alert] {
+    position: fixed;
+    top: 70px;
+    right: 15px;
+    z-index: 999;
+}
+
+[show-alert].alert-hidden {
+    animation-name: alert-hidden;
+    animation-duration: 1s;
+    animation-fill-mode: both;
+}
+
+@keyframes alert-hidden {
+    from {
+        right: 15px;
+    }
+
+    to {
+        right: -100%;
+        display: none;
+    }
+}
+
+.alter-success {
+    background-color: #b5ffc2;
+    padding: 10px;
+    border-radius: 10px;
+    color: rgb(45, 45, 45);
+}
+
+[show-alert] [close-alert] {
+    background-color: #ff8888c4;
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    line-height: 24px;
+    text-align: center;
+    font-weight: 600;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+/* image-preview  */
+.upload-image-preview {
+    width: 150px;
+    height: auto;
+    margin-top: 15px;
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.form-group-img img {
+    width: 150px;
+    height: auto;
+    margin-top: 15px;
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.upload-image-preview[src=""] {
+    display: none;
+}
+
+.alter-dange {
+    background-color: #ff8b74;
+    /* width: 100%; */
+    right: 0;
+    height: auto;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.btn-sec {
+    background-color: #515151;
+    border-radius: 10px;
+    color: white;
+    margin: 5px;
+}
+
+.split {
+    display: flex;
+}
+
+.form-group img {
+    width: 250px;
+    height: auto;
+}
+
+/*  */
+.roles-delete {
+    width: 50px;
+    height: auto;
+}
+
+.btn-login {
+    margin-top: 3%;
+}
+
+.account-detail {
+    margin: 10px;
+    border: 1px solid red;
+    padding: 10px;
+}
+
+.auth-logout {
+    right: 0;
+    top: 0;
+}
+
+.roles_detail-menu {
+    margin: 5px;
+    border: 1px solid red;
+    padding: 10px;
+}

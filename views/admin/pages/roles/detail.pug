@@ -1,0 +1,19 @@
+extends ../../layouts/default.pug
+
+block main 
+    div(class="roles_detail-menu")
+        h1(class="mb-4") Thông tin 1 nhóm quyền
+
+        if role.title
+            h2(class="mb-4") Tên nhóm: #{role.title}
+        if role.description
+            p(class="mb-4") Mô tả: #{role.description}
+
+    a(
+        class="btn badge-success"
+        href=`${prefixAdmin}/roles`
+    ) Quay lại 
+    a(
+        class="btn btn-warning"
+        href=`${prefixAdmin}/roles/edit/${role._id}`
+    ) Chỉnh sửa
