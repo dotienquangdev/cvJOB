@@ -4,7 +4,7 @@ include ../../mixins/select-tree.pug
 
 block main 
     
-    if(role.permissions.includes("products-create"))
+        //- if(role.permissions.includes("products-category_create"))
         +alert-error(5000)
 
         h1(class="mb-4") Thêm mới danh mục sản phẩm
@@ -23,14 +23,6 @@ block main
                     name="title"
                     required
                 )
-            //- div(class="form-group")
-            //- label(for="parent_id") Danh mục cha 
-            //- input(
-            //-     type="text" 
-            //-     name="parent_id"
-            //-     id="parent_id"
-            //-     class="form-control"
-            //- ) 
 
             div(class="form-group")
                 label(for="parent_id") Danh mục cha 
@@ -105,5 +97,5 @@ block main
                     type="submit"
                     class="btn btn-primary"
                 ) Tạo mới
-        script(src="/admin/js/product.js")
+    script(src="/admin/js/product.js")
             

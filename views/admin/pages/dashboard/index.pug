@@ -2,8 +2,53 @@ extends ../../layouts/default.pug
 
 block main 
     h1 Trang tổng quan
-
-    div #{user}
-    div ------------------------
-    div #{role.title}
-    div #{role.permissions}
+    .row.mt-4 
+        .col-12 
+            .cart.mb-4 
+                .cart-herader Thông tin tài khoản
+                .cart-body 
+                    if(user.avatar)
+                        img(
+                            src=user.avatar 
+                            style="height:100px;margin-bottom:15px;"
+                        )
+                    if(user.fullName)
+                        p Họ tên: <b>#{user.fullName}</b>
+                    if(user.email)
+                        p Họ tên: <b>#{user.email}</b>
+                    if(user.phone)
+                        p Họ tên: <b>#{user.phone}</b>
+                    if(user.title)
+                        p Phân quyền: <b>#{user.title}</b>
+        .col-6 
+            .card.mb-4 
+                .card-header Danh mục sản phẩm
+                .cart-body 
+                    p Số lượng : <b>#{statistic.categoryProduct.total}</b>
+                    p Hoạt động : <b>#{statistic.categoryProduct.active}</b>
+                    p Dừng họat động : <b>#{statistic.categoryProduct.inactive}</b>
+        .col-6 
+            .card.mb-4 
+                .card-header Sản phẩm
+                .cart-body 
+                    p Số lượng : <b>#{statistic.product.total}</b>
+                    p Hoạt động : <b>#{statistic.product.active}</b>
+                    p Dừng họat động : <b>#{statistic.product.inactive}</b>
+        .col-6 
+            .card.mb-4 
+                .card-header Tài khoản Admin 
+                .cart-body 
+                    p Số lượng : <b>#{statistic.account.total}</b>
+                    p Hoạt động : <b>#{statistic.account.active}</b>
+                    p Dừng họat động : <b>#{statistic.account.inactive}</b>
+        .col-6 
+            .card.mb-4 
+                .card-header Tài khoản client
+                .cart-body 
+                    p Số lượng : <b>#{statistic.user.total}</b>
+                    p Hoạt động : <b>#{statistic.user.active}</b>
+                    p Dừng họat động : <b>#{statistic.user.inactive}</b>
+    //- div #{user}
+    //- div ------------------------
+    //- div #{role.title}
+    //- div #{role.permissions}

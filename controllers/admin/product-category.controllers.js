@@ -32,6 +32,25 @@ module.exports.create = async (req, res) => {
 }
 // [POST] /admin/products-category/create tạo mới 1 sản phẩm
 module.exports.createPost = async (req, res) => {
+    console.log(res.locals.role.permissions);
+    // const permissions = res.locals.role.permissions;
+    // if (permissions.includes("products-category_create")) {
+    //     if (req.body.position == "") {
+    //         const count = await ProductCategory.count();
+    //         req.body.position = count + 1;
+    //     } else {
+    //         req.body.position = parseInt(req.body.position);
+    //     }
+    //     const record = new ProductCategory(req.body);
+    //     await record.save();
+    //     // console.log(record);
+    //     res.redirect(`${systemConfig.prefixAdmin}/products-category`);
+    //     console.log("Lưu thành công!");
+    // } else {
+    //     res.send("403");
+    //     return;
+    // }
+
     if (req.body.position == "") {
         const count = await ProductCategory.count();
         req.body.position = count + 1;
