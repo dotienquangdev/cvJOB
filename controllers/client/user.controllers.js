@@ -19,12 +19,10 @@ module.exports.registerPost = async (req, res) => {
     });
 
     if (existEmail) {
-        req.flash("error", "Email đẫ tồn tại!");
+        req.flash("error", "Email đẫ tồn tại !");
         res.redirect("back");
         return;
     };
-    // console.log(req.body);
-
     req.body.password = md5(req.body.password);
     const user = new User(req.body);
     await user.save();
@@ -38,16 +36,15 @@ module.exports.login = async (req, res) => {
         pageTitle: "Đăng nhập tài khoản",
     });
 }
+
 // get /search
 module.exports.loginPost = async (req, res) => {
     const email = req.body.email;
     const password = req.body.password;
-
     const user = await User.findOne({
         email: email,
         deleted: false,
     });
-
     if (!user) {
         req.flash("error", "Email không tồn tại");
         res.redirect("back");
@@ -76,13 +73,11 @@ module.exports.loginPost = async (req, res) => {
         })
     }
     res.cookie("tokenUser", user.tokenUser);
-
     await User.updateOne({
         tokenUser: user.tokenUser,
     }, {
         statusOnline: "online",
     })
-
     _io.once('connection', (socket) => {
         socket.broadcast.emit("SERVER_RETURN_USER_STATUS_ONLINE", {
             userId: user.id,
@@ -92,6 +87,7 @@ module.exports.loginPost = async (req, res) => {
 
     res.redirect("/");
 };
+
 
 module.exports.logout = async (req, res) => {
     await User.updateOne({
@@ -191,32 +187,25 @@ module.exports.resetPasswordPost = async (req, res) => {
     const password = req.body.password;
     const confirmPassword = req.body.confirmPassword;
     const tokenUser = req.cookies.tokenUser;
-
-
     // console.log(password);
     // console.log(confirmPassword);
     // console.log(tokenUser);
-
     await User.updateOne({
         tokenUser: tokenUser,
     }, {
         password: md5(password),
     });
-
     res.redirect("/user/login");
 };
 
 module.exports.info = async (req, res) => {
-    // const tokenUser = req.cookies.tokenUser;
-    // const infoUser = await User.findOne({
-    //     tokenUser: tokenUser,
-    // }).select("-password");
-    // // });
+    const tokenUser = req.cookies.tokenUser;
+    const infoUser = await User.findOne({
+        tokenUser: tokenUser,
+    }).select("-password");
     // console.log(infoUser);
     res.render("client/pages/user/info", {
         pageTitle: "Thông tin tài khoản ",
-        // infoUser: infoUser,
+        infoUser: infoUser,
     })
-};
-
-// 1h36p
+}; 

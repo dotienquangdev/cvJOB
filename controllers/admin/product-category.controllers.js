@@ -133,3 +133,4 @@ module.exports.detail = async (req, res) => {
         res.redirect(`${systemConfig.prefixAdmin}/products-category`);
     }
 };
+

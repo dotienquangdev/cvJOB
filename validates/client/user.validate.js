@@ -15,7 +15,6 @@ module.exports.registerPost = (req, res, next) => {
         return;
     }
     next();
-
 }
 
 module.exports.loginPost = (req, res, next) => {

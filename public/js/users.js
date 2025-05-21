@@ -10,7 +10,6 @@ if (listBtnAddFriend.length > 0) {
     });
 }
 
-
 // chuc nang huy gui yeu cau
 const listBtnCancelFriend = document.querySelectorAll("[btn-cancel-friend]");
 if (listBtnCancelFriend.length > 0) {
@@ -23,7 +22,6 @@ if (listBtnCancelFriend.length > 0) {
     });
 }
 //end chuc nang huy gui yeu cau
-
 
 // chuc nang tu choi ket ban
 const refuseFriend = (button) => {

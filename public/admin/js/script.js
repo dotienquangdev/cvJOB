@@ -25,6 +25,7 @@ if (buttonStatus.length > 0) {
         });
     })
 }
+
 // Form search
 const formSearch = document.querySelector("#form-search");
 if (formSearch) {
@@ -44,6 +45,7 @@ if (formSearch) {
     });
 }
 // End form search
+
 const buttonsPagination = document.querySelectorAll("[button-pagination]")
 console.log(buttonsPagination);
 if (buttonsPagination) {

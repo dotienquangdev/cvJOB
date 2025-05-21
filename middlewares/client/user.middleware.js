@@ -1,5 +1,4 @@
 const User = require("../../models/user.model");
-
 module.exports.infoUser = async (req, res, next) => {
     // console.log(req.cookies.tokenUser);
     if (req.cookies.tokenUser) {
@@ -12,11 +11,9 @@ module.exports.infoUser = async (req, res, next) => {
         if (user) {
             res.locals.user = user;
         }
-
     }
     next();
 }
-
 
 module.exports.connect = async (req, res, next) => {
     _io.once('connection', (socket) => {

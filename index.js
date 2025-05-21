@@ -52,7 +52,8 @@ app.use('/tinymce',
 );
 
 //Flash
-app.use(cookieParser("keyboard cat"));
+// app.use(cookieParser("keyboard cat"));
+app.use(cookieParser("LHNASDADAD"));
 app.use(session({ cookie: { maxAge: 60000 } }));
 app.use(flash());
 
